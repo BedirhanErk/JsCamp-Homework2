@@ -7,19 +7,23 @@ export default class EmployeeService{
         this.errors = [];
         this.employeeValidator = new EmployeeValidator();
     }
-
+    
     loadEmployee(){
         for (const user of users) {
-            if (!this.employeeValidator.checkAgeIsNumber(user) && !this.employeeValidator.checkRequiredFields(user) && this.employeeValidator.checkIsEmployee(user)) {
+            if (!this.employeeValidator.checkAgeIsNumber(user) && 
+            !this.employeeValidator.checkRequiredFields(user) && 
+            this.employeeValidator.checkIsEmployee(user)) {
                 this.employess.push(user)   
-            }  
+            }        
         }
     }   
-
+    
     addEmployee(user){
-        if (!this.employeeValidator.checkAgeIsNumber(user) && !this.employeeValidator.checkRequiredFields(user) && this.employeeValidator.checkIsEmployee(user)) {
+        if (!this.employeeValidator.checkAgeIsNumber(user) && 
+        !this.employeeValidator.checkRequiredFields(user) && 
+        this.employeeValidator.checkIsEmployee(user)) {
             this.employess.push(user)   
-        }
+        }       
     }
 
     listEmployee(){

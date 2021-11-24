@@ -10,9 +10,9 @@ export default class CustomerService{
 
     loadCustomer(){
         for (const user of users) {
-            if (!this.customerValidator.checkAgeIsNumber(user) && !this.customerValidator.checkRequiredFields(user) && this.customerValidator.checkIsCustomer(user)) {
-                this.customers.push(user)   
-            }  
+                if (this.customerValidator.checkIsCustomer(user) && !this.customerValidator.checkAgeIsNumber(user) && !this.customerValidator.checkRequiredFields(user)) {
+                    this.customers.push(user)   
+                }               
         }
     }   
 

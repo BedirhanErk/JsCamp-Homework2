@@ -13,8 +13,8 @@ export default class UserValidator{
                 hasErrors = true
                     this.errors.push(new DataError(`Validation problem ${field} is required`,user))
             }
-        }      
-        return hasErrors
+        }
+        return hasErrors;
     }
 
     checkAgeIsNumber(user){
@@ -23,6 +23,7 @@ export default class UserValidator{
             hasErrors = true
             this.errors.push(new DataError(`Validation problem ${user.age} is not a number`,user))
         }
-        return hasErrors
+        return hasErrors;
     }
+
 }
